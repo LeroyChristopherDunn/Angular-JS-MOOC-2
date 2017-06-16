@@ -17,7 +17,6 @@ app.controller('pizzaController', [
                 'Green Peppers'
             ],
             toppings: [],
-            filteredToppings: [],
             showAdded: false
         };
         $scope.addTopping = function (topping){
