@@ -16,11 +16,14 @@ app.controller('pizzaController', [
                 'Olives', 
                 'Green Peppers'
             ],
-            toppings: []
+            toppings: [],
+            filteredToppings: [],
+            showAdded: false
         };
         $scope.addTopping = function (topping){
             $scope.model.toppings.push(topping);
             $scope.model.search = null;
+            $scope.model.showAdded = true;
         }
     }
 ]);

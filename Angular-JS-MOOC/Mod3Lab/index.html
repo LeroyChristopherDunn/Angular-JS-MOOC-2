@@ -15,6 +15,7 @@
 
         <h3>Topping Search</h3>
         <input type="text" class="form-control" ng-model="model.search">
+        <div class="alert alert-danger" ng-show="model.search.length > 0 && filteredToppings.length === 0"> No results. </div> 
 
         <div ng-hide="model.search">
             Enter the search criteria above.
@@ -22,8 +23,11 @@
         <div ng-show="model.search">
             Search results:
         </div>
-        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
+        <div ng-show="model.search" ng-repeat="t in (filteredToppings = (model.availableToppings | filter:model.search))">
             <span ng-click="addTopping(t);">{{t}}</span>
+        </div>
+        <div class="alert alert-success" ng-show="model.showAdded">
+            Topping added <input type="button" value="close" ng-click="model.showAdded = false"> 
         </div>
 
         <h3>Selected Toppings</h3>
