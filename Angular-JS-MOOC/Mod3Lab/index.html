@@ -22,8 +22,8 @@
         <div ng-show="model.search">
             Search results:
         </div>
-        <div ng-show="model.search" ng-repeat="t in model.availableToppings">
-            <span ng-click="addTopping(t)">{{t}}</span>
+        <div ng-show="model.search" ng-repeat="t in model.availableToppings | filter:model.search">
+            <span ng-click="addTopping(t);">{{t}}</span>
         </div>
 
         <h3>Selected Toppings</h3>
