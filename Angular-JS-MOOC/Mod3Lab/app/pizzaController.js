@@ -15,7 +15,11 @@ app.controller('pizzaController', [
                 'Onion', 
                 'Olives', 
                 'Green Peppers'
-            ] 
+            ],
+            toppings: []
         };
+        $scope.addTopping = function (topping){
+            $scope.model.toppings.push(topping);
+        }
     }
 ]);
