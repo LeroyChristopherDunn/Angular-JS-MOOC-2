@@ -29,8 +29,32 @@
                         <h4>{{r.name}}</h4> {{r.description}}
                     </td>
                     <td>{{r.language}}</td>
+                    <td><input type="button" class="btn btn-success" ng-click="loadDetail(r.name)" value="Detail"></td>
                 </tr>
             </table>
+        </div>
+
+        <div class="col-md-5" ng-show="model.detail">
+            <h3>Detail</h3>
+            <div ng-show="model.detail.error" class="alert alert-danger"><h3>Error</h3> {{model.detail.message}}</div>
+
+            <div>
+                <h4>Name</h4>
+                {{model.detail.name}}
+            </div>
+            
+            <div>
+                <h4>Description</h4>
+                {{model.detail.description}}
+            </div>
+            
+            <div>
+                <h4>URL</h4>
+                <a ng-href="{{model.detail.html_url}}" target="_blank">{{model.detail.html_url}}</a>
+            </div>
+            
+            <h4>Raw Data</h4>
+            <pre>{{model.detail | json}}</pre>
         </div>
     </div>
 
