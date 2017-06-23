@@ -1,12 +1,13 @@
 app.controller('labController', [
-    '$scope', '$timeout', '$q',
-    function ($scope, $timeout, $q) {
+    '$scope', '$timeout', '$q', '$http',
+    function ($scope, $timeout, $q, $http) {
         $scope.model = {
             number: 0,
             result: 'Result',
         }
 
         $scope.checkOddNumber = checkOddNumber;
+        $scope.getRepos = getRepos;
 
         function checkOddNumber(input) {
         $scope.model.result = 'Working...';
@@ -34,6 +35,16 @@ app.controller('labController', [
         function isNumberOdd(input) {
             return !isNaN(input) && input % 2 == 1;
         }
+
+        function getRepos() {
+            $http.get('https://api.github.com/orgs/angular/repos')
+                .then(function (response) {
+                    $scope.model.repos = response.data;
+                }, function (response) {
+                     $scope.model.repos = 'Error: ' + response.data.message;
+                }
+        );
+}
     
     }
 ]);
