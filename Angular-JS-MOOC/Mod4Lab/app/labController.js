@@ -1,6 +1,7 @@
 app.controller('labController', [
     '$scope', '$timeout', '$q', '$http','gitHub',
     function ($scope, $timeout, $q, $http, github) {
+        
         $scope.model = {
             number: 0,
             result: 'Result',
