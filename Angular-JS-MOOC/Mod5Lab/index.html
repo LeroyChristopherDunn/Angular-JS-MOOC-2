@@ -2,16 +2,16 @@
 <html ng-app="app">
 
 <head>
-    <title>Tony's Pizza - New User Registration</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-        crossorigin="anonymous">
+	<title>Tony's Pizza - New User Registration</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+		crossorigin="anonymous">
 </head>
 
 <body ng-controller="labController">
-    <div class="container">
-        <h1>New User Registration</h1>
+	<div class="container">
+		<h1>New User Registration</h1>
 
-        <form class="form-horizontal" name="form" novalidate>
+		<form class="form-horizontal" name="form" novalidate>
 			<div class="form-group">
 				<div class="col-md-2">
 					<label>Username</label>
@@ -90,16 +90,16 @@
 					<button class="btn btn-default" ng-click="reset()">Reset</button>
 				</div>
 			</div>
-                    <pre>{{model | json}}</pre>
-
 		</form>
 
+		<pre>{{model | json}}</pre>
+	</div>
 
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="./app/app.js"></script>
-    <script src="./app/labController.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-resource.min.js"></script>
+	<script src="./app/registrationService.js"></script>
+	<script src="./app/app.js"></script>
+	<script src="./app/labController.js"></script>
 </body>
 
 </html>
