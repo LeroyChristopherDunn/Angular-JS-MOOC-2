@@ -50,9 +50,9 @@
 					<label>Phone Number</label>
 				</div>
 				<div class="col-md-5">
-					<input type="number" name="phone" class="form-control" ng-model="model.phone" ng-required="true">
+					<input type="number" name="phone" class="form-control" ng-model="model.phone" ng-required="!model.email">
 					<div class="alert alert-danger" ng-show="(form.phone.$touched || form.$submitted) && form.phone.$error.required">
-						Phone is required
+						Phone or email address is required
 					</div>
 				</div>
 			</div>
@@ -61,9 +61,9 @@
 					<label>Email Address</label>
 				</div>
 				<div class="col-md-5">
-					<input type="email" name="emailAddress" class="form-control" ng-model="model.email" ng-required="true">
+					<input type="email" name="emailAddress" class="form-control" ng-model="model.email" ng-required="!model.phone">
 					<div class="alert alert-danger" ng-show="(form.emailAddress.$touched || form.$submitted) && form.emailAddress.$error.required">
-						Email Address is required
+						Email Address or phone number is required
 					</div>
 				</div>
 			</div>
